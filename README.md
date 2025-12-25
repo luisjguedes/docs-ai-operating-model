@@ -97,11 +97,10 @@ styles/               # Vale prose linting rules (optional but recommended)
 
 ---
 
-## Suggested ways to personalize (for hiring impact)
+## Suggested ways to personalize
 
 - Add a **case study** reflecting your strongest domain (SaaS, MDM, APIs, data governance)
 - Add a **short demo video** (60–90s) showing: PR → CI → Pages → prompt validation → eval report
-- Add a “**Hiring?**” section with your role targets and preferred work style (remote-first, async)
 
 ---
 
