@@ -1,0 +1,31 @@
+id: release_notes_draft
+version: 1.0.0
+task: release_notes
+description: Draft developer-facing release notes from structured inputs.
+inputs:
+  - name: changes
+    type: markdown
+  - name: audience
+    type: string
+outputs:
+  format: markdown
+  required_sections:
+    - Summary
+    - Changes
+    - Fixes
+    - Breaking changes
+constraints:
+  - Do not invent features, parameters, or behaviors.
+  - If information is missing, explicitly say what is missing.
+  - Prefer short bullets; avoid marketing language.
+prompt: |
+  You are a Staff Technical Writer. Draft release notes for {{ audience }}.
+
+  Use only the information in CHANGES. Do not invent content.
+
+  CHANGES:
+  {{ changes }}
+
+  Output format:
+  # Summary
+  ...

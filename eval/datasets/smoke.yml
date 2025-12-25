@@ -1,0 +1,19 @@
+# Minimal smoke dataset. Extend this with real tasks.
+cases:
+  - id: rn_smoke_001
+    prompt_id: release_notes_draft
+    input:
+      audience: "developers"
+      changes: |
+        - Added: New endpoint /v1/widgets (beta)
+        - Fixed: Corrected 400 error message for invalid widgetId
+    expected:
+      required_headings:
+        - "Summary"
+        - "Changes"
+        - "Fixes"
+        - "Breaking changes"
+      forbidden_phrases:
+        - "I think"
+        - "probably"
+        - "might"

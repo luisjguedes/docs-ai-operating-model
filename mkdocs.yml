@@ -1,0 +1,39 @@
+site_name: Docs AI Operating Model
+repo_url: https://github.com/<YOUR-ORG>/<YOUR-REPO>
+repo_name: <YOUR-ORG>/<YOUR-REPO>
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+nav:
+  - Home: index.md
+  - Start here: start-here.md
+  - Strategy:
+      - Overview: strategy/overview.md
+      - Use-case catalog: strategy/use-cases.md
+      - Decision criteria: strategy/decision-criteria.md
+  - Governance:
+      - AI policy: governance/ai-policy.md
+      - Risk register: governance/risk-register.md
+      - Human review lanes: governance/review-lanes.md
+  - PromptOps:
+      - Prompt library: promptops/prompt-library.md
+      - Prompt spec: promptops/prompt-spec.md
+  - Evaluation:
+      - Evaluation framework: evaluation/framework.md
+      - Rubrics: evaluation/rubrics.md
+  - Implementation:
+      - Reference pipeline: implementation/pipeline.md
+      - CI quality gates: implementation/quality-gates.md
+  - ADRs:
+      - Index: adr/index.md
+      - ADR-0001: adr/adr-0001-pages-workflow.md

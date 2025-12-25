@@ -1,0 +1,8 @@
+extends: existence
+message: "Use 'LLM' consistently (avoid '%s')."
+level: warning
+ignorecase: true
+tokens:
+  - large language model
+  - Large Language Model
+  - LLM model

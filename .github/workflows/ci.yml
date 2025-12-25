@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements-docs.txt
+
+      - name: Validate prompt library
+        run: |
+          python -m docsai_toolkit validate-prompts
+
+      - name: Validate evaluation dataset (dry-run)
+        run: |
+          python -m docsai_toolkit eval --dataset eval/datasets/smoke.yml --dry-run
+
+      - name: Build MkDocs site (strict)
+        run: |
+          mkdocs build --strict
+
+      - name: Lint prose with Vale
+        uses: errata-ai/vale-action@v2
+        with:
+          files: docs
+          vale_flags: "--glob=*.md"
+          fail_on_error: true

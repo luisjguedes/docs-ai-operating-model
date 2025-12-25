@@ -1,0 +1,22 @@
+id: api_reference_enrichment
+version: 1.0.0
+task: api_reference
+description: Enrich a reference skeleton with “human layer” guidance.
+inputs:
+  - name: openapi_excerpt
+    type: yaml
+outputs:
+  format: markdown
+  required_sections:
+    - At a glance
+    - Authentication
+    - Endpoints
+    - Error model
+constraints:
+  - Do not fabricate endpoints or parameters.
+  - Use consistent headings and copy/paste examples.
+prompt: |
+  You are a senior technical writer. Convert the OpenAPI excerpt into a human-readable reference.
+
+  OPENAPI:
+  {{ openapi_excerpt }}
