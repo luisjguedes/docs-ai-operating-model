@@ -1,6 +1,8 @@
 site_name: Docs AI Operating Model
-repo_url: https://github.com/<YOUR-ORG>/<YOUR-REPO>
-repo_name: <YOUR-ORG>/<YOUR-REPO>
+repo_url: https://github.com/luisjguedes/docs-ai-operating-model
+repo_name: luisjguedes/docs-ai-operating-model
+edit_uri: edit/main/docs/
+
 theme:
   name: material
   features:
